@@ -16,4 +16,4 @@ jobs:
       # Add other steps for building and testing your application...
 
       - name: Run Gitleaks
-        uses: zricethezav/gitleaks-action@v7
+        uses: zricethezav/gitleaks-action@latest
