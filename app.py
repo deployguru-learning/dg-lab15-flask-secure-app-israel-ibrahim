@@ -13,6 +13,18 @@ secret_key = os.getenv("SECRET_KEY")
 # POST endpoint to receive and print POST data
 
 
+# POST endpoint to receive GitHub webhook events
+@app.route('/hook', methods=['POST'])
+def github_webhook():
+    data = request.get_json()
+
+    if data:
+        print("Received GitHub webhook payload:")
+        print(data)
+        return "Webhook received successfully!"
+    else:
+        return "No data received."
+
 @app.route('/receive_post_data', methods=['POST'])
 def receive_post_data():
     data = request.get_json()  # assuming JSON data in the POST request
